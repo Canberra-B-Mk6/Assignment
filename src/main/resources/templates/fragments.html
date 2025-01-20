@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+
+<div class="card mb-3" th:fragment="cart-item(id, name, price, quantity)">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://live.staticflickr.com/2887/33485104380_5ea079b4ed_b.jpg" class="img-fluid rounded-start" alt="Product Image">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${name}"></h5>
+                <p class="card-text" th:text="'$'+${price}"></p>
+                <form th:action="'/cart/change-quantity/' + ${id}" method="post" class="input-group mb-3" style="max-width: 150px;">
+                    <input name="value" type="number" class="form-control text-center" th:value="${quantity}">
+                    <button class="btn btn-outline-secondary btn-sm" type="submit">Save</button>
+                </form>
+                <form th:action="'/cart/remove/' + ${id}">
+                    <button class="btn btn-danger btn-sm">Remove</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<a th:href="'/products/' + ${id}" class="text-decoration-none col-md-4" th:fragment="product-item(id)">
+    <div class="card h-100">
+        <img src="https://live.staticflickr.com/2887/33485104380_5ea079b4ed_b.jpg" class="card-img-top" alt="Product 1">
+        <div class="card-body text-center">
+            <h5 class="card-title" th:text="'VN' + ${id}"></h5>
+            <p class="card-text">$110.00</p>
+        </div>
+    </div>
+</a>
+
+
+</html>

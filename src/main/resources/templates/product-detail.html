@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout:: layout(title = 'Domestic flights', content = ~{::article})}">
+
+<article>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-md-6">
+                <img src="https://sgp1.digitaloceanspaces.com/e-magazine.asiamedia.vn/wp-content/uploads/2023/04/09200202/danh-dach-dia-chi-phong-ve-vietnam-airlines-jan1818.png" class="img-fluid rounded" alt="Product Image">
+            </div>
+            <!-- Product Info -->
+            <div class="col-md-6">
+                <h1 class="mb-3">VN264 SGN-HAN</h1>
+                <p class="text-muted">Category: Domestic</p>
+                <h4 class="text-success">$110.0</h4>
+                <p class="mt-4">
+                    VN264: SGN-HAN (Tan Son Nhan Intl. -> Noi Bai Intl.)
+                    <br>Aircraft Type: Boeing 787-10 (VN-A868)
+                    <br>Date: January 21, 2025 at 06:30 AM (UTC+7, expected)
+                </p>
+                <form th:action="'/cart/add/'+${productId}" method="post">
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity of passengers:</label>
+                        <input type="number" id="quantity" name="quantity" class="form-control w-25" value="1" min="1">
+                    </div>
+                    <button class="btn btn-primary btn-lg me-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+
+</html>

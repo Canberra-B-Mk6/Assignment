@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout:: layout(title = 'Flight selection', content = ~{::article})}">
+
+    <article>
+        <main class="container my-5">
+            <h2 class="mb-4">Our Products</h2>
+            <div class="row g-4">
+                <a th:replace="~{fragments:: product-item(id = 164_SGN-HAN)}">
+
+                </a>
+                <a th:replace="~{fragments:: product-item(id = 234_HAN-SGN)}">
+
+                </a>
+                <a th:replace="~{fragments:: product-item(id = 364_SGN-TPE)}">
+
+                </a>
+                <a th:replace="~{fragments:: product-item(id = 464_HAN-FRA)}">
+
+                </a>
+                <a th:replace="~{fragments:: product-item(id = 564_HAN-SFO)}">
+
+                </a>
+                <a th:replace="~{fragments:: product-item(id = 664_SGN-MEL)}">
+
+                </a>
+            </div>
+        </main>
+    </article>
+
+</html>

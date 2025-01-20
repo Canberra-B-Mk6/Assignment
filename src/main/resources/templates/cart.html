@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout:: layout(title = 'Cart ', content = ~{::article})}">
+
+<article>
+    <div class="container mt-5">
+        <h1 class="mb-4">Shopping Cart</h1>
+        <div class="row">
+            <!-- Cart Item -->
+            <div class="col-md-8" id="cart-container">
+                <th:block th:each="cartItem: ${cart}">
+                    <div th:replace="~{fragments:: cart-item(id = ${cartItem.key}, name = ${cartItem.key}, price = 110, quantity = ${cartItem.value})}"></div>
+                </th:block>
+            </div>
+            <!-- Cart Summary -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cart Summary</h5>
+                        <p class="card-text" th:text="'Total Items: ' + ${total}"></p>
+                        <p class="card-text">Total Price: $110.00</p>
+                        <button class="btn btn-primary w-100">Proceed with payment and ID verification</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+</html>
