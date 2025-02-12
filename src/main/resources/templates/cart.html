@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Cart Summary</h5>
                         <p class="card-text" th:text="'Total Items: ' + ${total}"></p>
-                        <p class="card-text">Total Price: $110.00</p>
+                        <p class="card-text" th:text="'Total Price: ' + ${total}*110"></p>
                         <button class="btn btn-primary w-100">Proceed with payment and passenger IDs</button>
                     </div>
                 </div>

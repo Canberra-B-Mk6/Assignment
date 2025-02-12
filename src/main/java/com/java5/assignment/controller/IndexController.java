@@ -14,7 +14,7 @@ import java.util.Map;
 @SessionAttributes("cart")
 public class IndexController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String index() {
         return "home";
     }
